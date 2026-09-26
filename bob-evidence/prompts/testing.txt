@@ -1,0 +1,5 @@
+Prompt:
+"We are designing the AST verification service in Python for DevFlow. We need to verify whether uploaded Python files have valid syntax without running pytest or executing untrusted code on our server. How can ast.parse be leveraged to collect line numbers and syntax error details across multiple files?"
+
+Response Summary:
+IBM Bob 2.0 suggested wrapping `ast.parse` inside a recursive file traverser, catching `SyntaxError` to extract `.lineno`, `.msg`, and `.text`, returning a standardized verification status report detailing passed files vs failed files.

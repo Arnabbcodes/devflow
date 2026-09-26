@@ -1,0 +1,5 @@
+Prompt:
+"During file upload in FastAPI, we need to extract arbitrary user-submitted ZIP files. What are the potential security pitfalls such as Zip Slip directory traversal vulnerabilities, and how can we write a safe extraction handler in Python without leaking files outside our intended extraction directory?"
+
+Response Summary:
+IBM Bob 2.0 provided a robust implementation validating member paths against `..`, verifying that `os.path.commonpath([dest, member_path]) == dest` or using `Path.resolve().relative_to(target_dir)`, and handling directories before files.

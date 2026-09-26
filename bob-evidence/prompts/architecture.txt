@@ -1,0 +1,5 @@
+Prompt:
+"We are designing an automated code review and release-readiness engine called DevFlow for a 48-hour hackathon. The system consists of a Flutter frontend, a FastAPI backend, Groq AI for LLM analysis, AST for safe syntax verification, and Supabase for cloud persistence. Please review our architecture, ensure separation of concerns between runtime inference (Groq) and engineering workflow, identify any security risks in ZIP handling, and propose a clean directory layout."
+
+Response Summary:
+IBM Bob 2.0 recommended isolating the runtime inference to Groq with llama-3.3-70b-versatile, implementing Zip Slip prevention during extraction, utilizing Python's native AST parser instead of dynamic code execution to ensure zero code-execution risk on untrusted uploads, and organizing the project into schemas, services, utils, and ai submodules.
